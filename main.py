@@ -14,7 +14,8 @@ params = urllib.parse.urlencode({
 })
 
 try:
-    img = open('/Users/stevenluong/PycharmProjects/azure_vision_caller/venv/IMG_4107.jpg', 'rb').read()
+    #alternate the image link
+    img = open('IMG_4107.jpg', 'rb').read()
     conn = http.client.HTTPSConnection('westus2.api.cognitive.microsoft.com')
     conn.request("POST", "/customvision/v3.0/Prediction/d758f33a-f26a-400e-ad1a-f5736be20b13/detect/iterations/Iteration1/image", img, headers)
     response = conn.getresponse()
